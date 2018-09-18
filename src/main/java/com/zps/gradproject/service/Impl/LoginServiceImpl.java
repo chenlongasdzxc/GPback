@@ -21,28 +21,14 @@ public class LoginServiceImpl implements LoginService {
     private UserRepository userRepository;
 
 
-    /*登录*/
-    /*@Override
-    public Commes login(String userName, String userPassword) {
-        try {
-            User user = userRepository.findByUserName(userName); 账号错误会报空指针异常
-            if (Objects.equals(user.getUserPassword(),userPassword)){
-                return Commes.successMes();
-            }else {
-                return Commes.errorMes("400","密码错误");
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-            return Commes.errorMes("401","账号不存在");
-        }
-    }*/
-
     @Override
-    public Commes<User> login(String userName, String userPassword) {
+    public Commes<User> login(String userName, String userPassword,HttpServletRequest request) {
           User user = userRepository.findByUserName(userName);
           try {
               if (user!=null){
                   if (Objects.equals(user.getUserPassword(),userPassword)){
+                      HttpSession session = request.getSession();
+                      session.setAttribute("user",user);
                       return Commes.successMes();
                   }else {
                       return Commes.errorMes("400","密码不正确");

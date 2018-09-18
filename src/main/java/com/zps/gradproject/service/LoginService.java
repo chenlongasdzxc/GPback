@@ -15,7 +15,7 @@ public interface LoginService {
 
    /* Commes<User> update(String userName,String password);*/
 
-    Commes<User> login(String userName, String userPassword);
+    Commes<User> login(String userName, String userPassword,HttpServletRequest request);
 
 
 }

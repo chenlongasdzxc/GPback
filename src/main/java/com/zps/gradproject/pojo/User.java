@@ -39,6 +39,8 @@ public class User implements Serializable {
     @Column(length=10)
     private String favoriteFood; //喜爱的食物
 
+    private Long userCode;
+
     /*
      *  删除标志位
      *  标志该实体是否已删除

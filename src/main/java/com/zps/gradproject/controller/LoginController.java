@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -23,8 +24,8 @@ public class LoginController {
     private LoginService loginService;
 
     @RequestMapping("/login")
-    public Commes<User> login( @RequestBody User user){
-        return loginService.login(user.getUserName(),user.getUserPassword());
+    public Commes<User> login(@RequestBody User user, HttpServletRequest request){
+        return loginService.login(user.getUserName(),user.getUserPassword(),request);
     }
 
 
