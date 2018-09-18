@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
  **/
 public interface UserService {
 
-    Commes<User> deleteUser(String id);
+    Commes<User> deleteUser(Long id);
 
     Commes<User> addUser(User user);
+
+    Commes<User> editUser(User user);
 }

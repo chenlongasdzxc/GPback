@@ -12,7 +12,7 @@ public interface UserRepository extends JpaRepository<User,Long>, JpaSpecificati
 
     User findByUserName(String userName);
 
-    User findByIdAndDeletedIsFalse(String id);
+    User findByIdAndDeletedIsFalse(Long id);
 
 
 }

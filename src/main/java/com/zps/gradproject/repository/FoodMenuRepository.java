@@ -14,5 +14,5 @@ import java.util.List;
  **/
 public interface FoodMenuRepository extends JpaRepository<FoodMenu,Long>, JpaSpecificationExecutor<FoodMenu> {
 
-    List<FoodMenu> findByFoodNameAAndDeletedIsFalse(String foodName);
+
 }

@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     * */
 
     @Override
-    public Commes<User> deleteUser(String id) {
+    public Commes<User> deleteUser(Long id) {
         try {
             User user = userRepository.findByIdAndDeletedIsFalse(id);
             user.setDeleted(true);
@@ -37,7 +37,6 @@ public class UserServiceImpl implements UserService {
     /*
     * 添加用户
     * */
-
     @Override
     public Commes<User> addUser(User user) {
         try {
@@ -49,6 +48,20 @@ public class UserServiceImpl implements UserService {
         }catch (Exception e){
             e.printStackTrace();
             return Commes.innerError("错误");
+        }
+    }
+
+    /**
+     * 修改用户
+     * */
+    @Override
+    public Commes<User> editUser(User user) {
+        userRepository.findByIdAndDeletedIsFalse(user.getId());
+        try {
+            return Commes.success(userRepository.save(user));
+        }catch (Exception e){
+            e.printStackTrace();
+            return Commes.errorMes("400","数据错误");
         }
     }
 }
