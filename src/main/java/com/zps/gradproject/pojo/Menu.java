@@ -30,6 +30,8 @@ public class Menu implements Serializable {
 
     private String foodCode;
 
+    private String shopCode;
+
     /*
      *  删除标志位
      *  标志该实体是否已删除

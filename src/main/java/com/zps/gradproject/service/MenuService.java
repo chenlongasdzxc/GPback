@@ -4,6 +4,7 @@ import com.zps.gradproject.pojo.Commes;
 import com.zps.gradproject.pojo.Menu;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Zps
@@ -11,11 +12,7 @@ import java.util.Date;
  **/
 public interface MenuService {
 
-    /*Commes<Menu> add(Menu menu);
+   Commes<Menu> add(Menu menu);
 
-    Commes<Menu> delete(String id,boolean delete);
 
-    Commes<Menu> update(Menu menu);
-
-    Commes<Menu> findFuzzy(String foodName, String foodPrice, Date date);*/
 }
