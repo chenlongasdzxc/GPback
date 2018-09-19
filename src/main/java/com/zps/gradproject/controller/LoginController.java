@@ -28,5 +28,8 @@ public class LoginController {
         return loginService.login(user.getUserName(),user.getUserPassword(),request);
     }
 
-
+    @RequestMapping("/findOne")
+    public Commes<User> findOne(@RequestParam String userName){
+        return loginService.findone(userName);
+    }
 }

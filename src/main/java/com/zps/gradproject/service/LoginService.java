@@ -17,5 +17,5 @@ public interface LoginService {
 
     Commes<User> login(String userName, String userPassword,HttpServletRequest request);
 
-
+    Commes<User> findone(String userName);
 }

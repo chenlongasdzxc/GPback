@@ -22,24 +22,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    /*@RequestMapping("/deleteUser")
-    public Commes<User> deleteUser(@RequestParam String id){
+    @RequestMapping("/deleteUser")
+    public Commes<User> deleteUser(@RequestParam Long id){
         return userService.deleteUser(id);
-    }*/
-
-   /* @RequestMapping()
-    public Commes<User> updateUser(@RequestParam String userName,
-                                   @RequestParam String userPassword,
-                                   @RequestParam String birthday,
-                                   @RequestParam String email,
-                                   @RequestParam String imgUrl,
-                                   @RequestParam String phone,
-                                   @RequestParam String favoriteFood){
-        return userService.updateUser();
-    }*/
+    }
 
     @RequestMapping("/addUser")
     public Commes<User> addUser(@RequestBody User user){
         return userService.addUser(user);
+    }
+
+    @RequestMapping("/editUser")
+    public Commes<User> editUser(@RequestBody User user){
+        return userService.editUser(user);
     }
 }

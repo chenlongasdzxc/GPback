@@ -41,4 +41,18 @@ public class LoginServiceImpl implements LoginService {
               return Commes.innerError("");
           }
     }
+
+    /*
+    *
+    * */
+    @Override
+    public Commes<User> findone(String userName) {
+        try {
+            userRepository.findByUserNameAndDeletedIsFalse(userName);
+            return Commes.errorMes("400","账号已存在");
+        }catch (Exception e){
+            e.printStackTrace();
+            return Commes.successMes();
+        }
+    }
 }
