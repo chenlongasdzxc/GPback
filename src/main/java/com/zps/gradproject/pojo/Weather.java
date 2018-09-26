@@ -24,7 +24,21 @@ public class Weather {
 
     private Long cityCode;
 
-    private Long zipCode;
+    private int  levelType;
+
+    private Long zipCode;  //邮箱编码
 
     private String mergerName;
+
+    private String shortName;
+
+    private Long lng;
+
+    private Long lat;
+
+    private String pinYin;
+
+    private String firstChar;
+
+    private Long adcode;
 }
